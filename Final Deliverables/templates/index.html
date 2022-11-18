@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DIGITAL NATURALIST</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link rel="icon" type="image/x-icon" href="https://img.icons8.com/fluency/48/000000/natural-food.png">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+
+<body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif;">
+
+	<div class="h-screen pb-14 bg-right bg-cover">
+		<!--Nav-->
+		<div class="w-full container mx-auto p-6">
+
+
+		</div>
+
+		<!--Main-->
+		<div class="container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+
+			<!--Left Col-->
+			<div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
+				<h1
+					class="my-4 text-3xl md:text-5xl text-green-800 font-bold leading-tight text-center md:text-left slide-in-bottom-h1">
+					Digital Naturalist</h1>
+				<p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle">
+					An Artificial Intelligence powered tool for Bio-Diversity Researchers</p>
+
+				<p class="text-blue-400 font-bold pb-8 lg:pb-6 text-center md:text-left fade-in">Trouble identifing a
+					animal,plant or bird,<br>Upload the picture<br>Sit back<br>Relax<br>We will find it
+					<!DOCTYPE html>
+				</p>
+				<div class="flex w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in">
+					<form action="/predict" id="upload-file" method="post" enctype="multipart/form-data">
+						<input type="file" name="uploadedimg" id="uploadedimg" required accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" >
+						<input type="reset" value="Reset" class="upload">
+						<input type="submit" value="Upload" class="upload" onsubmit="check_file">
+					</form>
+				</div>
+
+			</div>
+
+			<!--Right Col-->
+			<div class="w-full xl:w-3/5 py-6 overflow-y-hidden">
+				<img class="w-5/6 mx-auto lg:mr-0 slide-in-bottom" src="https://i.ibb.co/vwhxYCg/animals.png">
+			</div>
+
+
+			<!--Footer-->
+			<div class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
+				<a class="text-gray-500 no-underline hover:no-underline"
+					href="https://github.com/IBM-EPBL/IBM-Project-46326-1660745221">&copy; Digital Naturalist</a>
+			</div>
+
+		</div>
+
+
+	</div>
+
+<script>
+document.getElementById("uploadedimg").addEventListener("change", validateFile)
+
+function validateFile(){
+  const allowedExtensions =  ['jpg','png'],
+        sizeLimit = 1_000_000;
+  const { name:fileName, size:fileSize } = this.files[0];
+  const fileExtension = fileName.split(".").pop();
+  if(!allowedExtensions.includes(fileExtension)){
+    alert("Only image files - .jpg, .jpeg, .png, .tiff ");
+    this.value = null;
+  }else if(fileSize > sizeLimit){
+    alert("file size too large")
+    this.value = null;
+  }
+}</script>
+</body>
+
+</html>
