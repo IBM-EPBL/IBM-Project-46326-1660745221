@@ -28,6 +28,5 @@ In this project, we are creating a web application which uses a deep learning mo
 - GOKUL R
 - JAGAN P
 
-## 🗺️ EMPATHY MAP - [Click Here](https://github.com/IBM-EPBL/IBM-Project-46326-1660745221/blob/main/Digital%20Naturalist/Empathy%20Map.pdf)
 <div align="center">
  <h5> Made with :hearts: in C. Abdul Hakeem College of Engineering and Technology </h5>
